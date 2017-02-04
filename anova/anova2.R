@@ -54,4 +54,5 @@ op=par(mar=c(5,8,4,2))
 plot(TukeyHSD(smarks1.aov2, ordered=T), cex.axis=0.7, las=1)
 abline(v=0, lty=2, col='gray40')
 
+
 model.tables(smarks1.aov2,type='means',se=T)
