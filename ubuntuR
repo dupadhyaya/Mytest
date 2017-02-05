@@ -1,0 +1,12 @@
+# Help on customisation of R on Ubuntu
+Ubuntu - Library Paths 
+$R RHOME
+$which R
+/etc/R/Rprofile.site
+Add this to above file
+.First <- function(){ 
+  .libPaths("your path here") 
+  library(XLConnect)
+}
+
+This evaluates the .libPath() command directly at start
