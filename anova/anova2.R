@@ -56,3 +56,4 @@ abline(v=0, lty=2, col='gray40')
 
 
 model.tables(smarks2.aov2,type='means',se=T)
+
