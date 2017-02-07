@@ -30,3 +30,16 @@ library(lmSupport)
 modelEffectSizes(omni1.lm)
 # contribution of each variable  on Sales
 # price = 0.6605, promotion = 0.4728
+
+#Linearity
+# Evaluate Nonlinearity
+# component + residual plot 
+crPlots(custsale1.lm)
+# Ceres plots 
+ceresPlots(omni1.lm)
+
+# Global Validation
+# Global test of model assumptions
+library(gvlma)
+gvmodel <- gvlma(omni1.lm) 
+summary(gvmodel)

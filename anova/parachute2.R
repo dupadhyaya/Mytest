@@ -70,3 +70,10 @@ interaction.plot(p7$supplier,p7$loom,p7$strength, type='b',pch=1:4,lty=1:4,col=c
                       ,xlab = 'Supplier'
                       ,ylab = 'Strength')
 plot.2
+
+vif(p7.aov)
+sqrt(vif(p7.aov))
+
+library(gvlma)
+gvmodel <- gvlma(p7.aov) 
+summary(gvmodel)

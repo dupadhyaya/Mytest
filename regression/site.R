@@ -92,3 +92,18 @@ predict(sales2.lm)
 cbind(sales2$area,sales2$sales, predict(sales2.lm, newdata, interval="predict"))
 cbind(sales2$area,sales2$sales, predict(sales2.lm, newdata, interval="confidence", level=0.99))
 cbind(sales2$area,sales2$sales, predict(sales2.lm, newdata, interval="confidence", level=0.95))
+
+#Linearity
+# Evaluate Nonlinearity
+# component + residual plot 
+crPlots(sales2.lm)
+# Ceres plots 
+#ceresPlots(sales2.lm)
+?ceresPlots
+
+library(gvlma)
+gvmodel <- gvlma(sales2.lm) 
+summary(gvmodel)
+
+# Fitted Regression line plot
+library(visreg)

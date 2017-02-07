@@ -21,3 +21,18 @@ plot(fitted(custsale1.lm),custsale1.stdres)
 plot(custsale1$customers, custsale1.stdres)
 
 abline(h=0)
+ncvTest(custsale1.lm)
+spreadLevelPlot(custsale1.lm)
+
+#Linearity
+# Evaluate Nonlinearity
+# component + residual plot 
+crPlots(custsale1.lm)
+# Ceres plots 
+#ceresPlots(custsale1.lm)
+
+library(gvlma)
+gvmodel <- gvlma(custsale1.lm) 
+summary(gvmodel)
+summary.lm(custsale1.lm)
+summary(custsale1.lm)
